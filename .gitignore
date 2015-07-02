@@ -1,0 +1,19 @@
+# system
+.DS_Store
+
+# editor
+.idea
+*.iml
+
+# gradle
+.gradle
+gradle
+
+# vp
+vpproject
+
+# build
+build
+
+# test
+out
