@@ -1,0 +1,20 @@
+dependencies {
+    compile 'log4j:log4j:1.2.17'
+    compile 'org.slf4j:slf4j-log4j12:1.7.12'
+    compile 'com.alibaba:fastjson:1.2.4'
+    compile 'com.thoughtworks.xstream:xstream:1.4.8'
+    //compile 'org.codehaus.jettison:jettison:1.3.7'
+    compile 'com.google.guava:guava:18.0'
+    compile 'joda-time:joda-time:2.5'
+
+    compile 'org.apache.httpcomponents:httpmime:4.4.1'
+    compile 'org.apache.httpcomponents:httpcore-nio:4.4.1'
+    compile 'org.apache.httpcomponents:httpcore:4.4.1'
+    compile 'org.apache.httpcomponents:httpclient:4.4.1'
+    compile 'org.apache.httpcomponents:httpasyncclient:4.1'
+
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'javax.inject:javax.inject:1'
+
+    //compile 'com.wemote:scorpio-utils:0.1'
+}

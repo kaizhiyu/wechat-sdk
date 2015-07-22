@@ -1,12 +1,41 @@
-apply plugin: 'java'
+group = 'com.wemote'
+version = '0.1.0'
 
-sourceCompatibility = 1.5
-version = '1.0'
-
-repositories {
-    mavenCentral()
+allprojects {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xlint:deprecation" << "-Xlint:unchecked"
+    }
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven'
+    //sourceCompatibility = 1.5
+
+    repositories {
+        maven {
+            url 'http://lab.bj.m.xdata.com:8081/nexus/content/groups/public'
+        }
+    }
+
+    dependencies {
+        testCompile 'junit:junit:4.12'
+        testCompile 'com.jayway.jsonpath:json-path:0.8.1'
+        testCompile 'com.jayway.jsonpath:json-path-assert:0.8.1'
+        testCompile 'org.mockito:mockito-core:1.9.5'
+    }
+}
+
+apply plugin: 'maven'
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://lab.bj.m.xdata.com:8081/nexus/content/repositories/data3-releases") {
+                authentication(userName: "admin", password: "admin")
+            }
+            pom.version = version
+            pom.artifactId = 'wechat-sdk-java'
+            pom.groupId = group
+        }
+    }
 }

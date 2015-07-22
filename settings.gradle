@@ -1,2 +1,6 @@
 rootProject.name = 'wechat-sdk'
 
+include 'core'
+
+include 'api'
+
